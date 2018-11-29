@@ -1,0 +1,140 @@
+
+
+			FORWARD SELECTION
+
+Variable Considered: Length
+ Rings ~ Length
+Variable Considered: Shell_Weight
+ Rings ~ Shell_Weight
+Variable Considered: Shucked_Weight
+ Rings ~ Shucked_Weight
+Variable Considered: Viscera_Weight
+ Rings ~ Viscera_Weight
+Variable Considered: Whole_Weight
+ Rings ~ Whole_Weight
+Variable Considered: Diameter
+ Rings ~ Diameter
+Variable Considered: Sex
+ Rings ~ C(Sex)
+Variable Considered: Height
+ Rings ~ Height
+Current Score After Selecting Shell_Weight: 0.39370399551821533
+
+Variable Considered: Length
+ Rings ~ Shell_Weight + Length
+Variable Considered: Shucked_Weight
+ Rings ~ Shell_Weight + Shucked_Weight
+Variable Considered: Viscera_Weight
+ Rings ~ Shell_Weight + Viscera_Weight
+Variable Considered: Whole_Weight
+ Rings ~ Shell_Weight + Whole_Weight
+Variable Considered: Diameter
+ Rings ~ Shell_Weight + Diameter
+Variable Considered: Sex
+ Rings ~ Shell_Weight + C(Sex)
+Variable Considered: Height
+ Rings ~ Shell_Weight + Height
+Current Score After Selecting Shucked_Weight: 0.4736712665147662
+
+Variable Considered: Length
+ Rings ~ Shell_Weight + Shucked_Weight + Length
+Variable Considered: Viscera_Weight
+ Rings ~ Shell_Weight + Shucked_Weight + Viscera_Weight
+Variable Considered: Whole_Weight
+ Rings ~ Shell_Weight + Shucked_Weight + Whole_Weight
+Variable Considered: Diameter
+ Rings ~ Shell_Weight + Shucked_Weight + Diameter
+Variable Considered: Sex
+ Rings ~ Shell_Weight + Shucked_Weight + C(Sex)
+Variable Considered: Height
+ Rings ~ Shell_Weight + Shucked_Weight + Height
+Current Score After Selecting Diameter: 0.501983142397662
+
+Variable Considered: Length
+ Rings ~ Shell_Weight + Shucked_Weight + Diameter + Length
+Variable Considered: Viscera_Weight
+ Rings ~ Shell_Weight + Shucked_Weight + Diameter + Viscera_Weight
+Variable Considered: Whole_Weight
+ Rings ~ Shell_Weight + Shucked_Weight + Diameter + Whole_Weight
+Variable Considered: Sex
+ Rings ~ Shell_Weight + Shucked_Weight + Diameter + C(Sex)
+Variable Considered: Height
+ Rings ~ Shell_Weight + Shucked_Weight + Diameter + Height
+Current Score After Selecting Sex: 0.5145320981912859
+
+Variable Considered: Length
+ Rings ~ Shell_Weight + Shucked_Weight + Diameter + Sex + Length
+Variable Considered: Viscera_Weight
+ Rings ~ Shell_Weight + Shucked_Weight + Diameter + Sex + Viscera_Weight
+Variable Considered: Whole_Weight
+ Rings ~ Shell_Weight + Shucked_Weight + Diameter + Sex + Whole_Weight
+Variable Considered: Height
+ Rings ~ Shell_Weight + Shucked_Weight + Diameter + Sex + Height
+Current Score After Selecting Whole_Weight: 0.5247983174289534
+
+Variable Considered: Length
+ Rings ~ Shell_Weight + Shucked_Weight + Diameter + Sex + Whole_Weight + Length
+Variable Considered: Viscera_Weight
+ Rings ~ Shell_Weight + Shucked_Weight + Diameter + Sex + Whole_Weight + Viscera_Weight
+Variable Considered: Height
+ Rings ~ Shell_Weight + Shucked_Weight + Diameter + Sex + Whole_Weight + Height
+Current Score After Selecting Viscera_Weight: 0.531656997609869
+
+Variable Considered: Length
+ Rings ~ Shell_Weight + Shucked_Weight + Diameter + Sex + Whole_Weight + Viscera_Weight + Length
+Variable Considered: Height
+ Rings ~ Shell_Weight + Shucked_Weight + Diameter + Sex + Whole_Weight + Viscera_Weight + Height
+Current Score After Selecting Height: 0.5369902932616389
+
+Variable Considered: Length
+ Rings ~ Shell_Weight + Shucked_Weight + Diameter + Sex + Whole_Weight + Viscera_Weight + Height + Length
+Selected Variables
+ Sex
+ Length
+ Diameter
+ Height
+Data of Selected Features: 
+[[0.    1.    0.455 0.365]
+ [0.    1.    0.35  0.265]
+ [0.    0.    0.53  0.42 ]
+ ...
+ [0.    1.    0.6   0.475]
+ [0.    0.    0.625 0.485]
+ [0.    1.    0.71  0.555]]
+Final Equation After Forward Selection: Rings ~ Shell_Weight + Shucked_Weight + Diameter + C(Sex) + Whole_Weight + Viscera_Weight + Height + 1
+R^2 Adjusted After Forward Selection Model Fitting: 0.5369902932616389
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  Rings   R-squared:                       0.538
+Model:                            OLS   Adj. R-squared:                  0.537
+Method:                 Least Squares   F-statistic:                     606.4
+Date:                Sat, 08 Sep 2018   Prob (F-statistic):               0.00
+Time:                        20:25:44   Log-Likelihood:                -9204.2
+No. Observations:                4177   AIC:                         1.843e+04
+Df Residuals:                    4168   BIC:                         1.848e+04
+Df Model:                           8                                         
+Covariance Type:            nonrobust                                         
+==================================================================================
+                     coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+Intercept          3.8704      0.275     14.056      0.000       3.331       4.410
+C(Sex)[T.I]       -0.8264      0.102     -8.087      0.000      -1.027      -0.626
+C(Sex)[T.M]        0.0576      0.083      0.691      0.490      -0.106       0.221
+Shell_Weight       8.7508      1.124      7.785      0.000       6.547      10.955
+Shucked_Weight   -19.8026      0.815    -24.301      0.000     -21.400     -18.205
+Diameter          10.5695      0.989     10.688      0.000       8.631      12.508
+Whole_Weight       8.9775      0.725     12.378      0.000       7.556      10.399
+Viscera_Weight   -10.6128      1.288     -8.241      0.000     -13.138      -8.088
+Height            10.7491      1.535      7.002      0.000       7.739      13.759
+==============================================================================
+Omnibus:                      948.188   Durbin-Watson:                   1.435
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             2714.822
+Skew:                           1.182   Prob(JB):                         0.00
+Kurtosis:                       6.164   Cond. No.                         76.3
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+Prediction After Forward Selection: [10.47700104  9.32607884 11.32121448 ...  9.99749218 11.5953199
+  9.20618678]
+R^2 After Forward Selection: 0.3565014846277883
